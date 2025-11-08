@@ -16,9 +16,9 @@ def get_public_ip():
         sys.exit(1)
 
 def get_hosted_zone_id(client, zone_name):
-    zones = client.list_hosted_zones_by_name(DNSName=zone_name)
+    zones = client.list_hosted_zones_by_name(DNSName=zone_name.rstrip('.'))
     for zone in zones['HostedZones']:
-        if zone['Name'] == zone_name:
+        if zone['Name'].rstrip('.') == zone_name.rstrip('.'):
             return zone['Id'].split('/')[-1]
     raise Exception(f"Hosted zone for {zone_name} not found.")
 
