@@ -5,7 +5,7 @@ import json
 import sys
 
 DOMAIN = "home.unorthodoxdev.net"
-ZONE_NAME = "unorthodoxdev.net."
+ZONE_NAME = "unorthodoxdev.net"
 TTL = 300  # seconds
 
 def get_public_ip():
