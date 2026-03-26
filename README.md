@@ -98,6 +98,8 @@ This creates `~/.aws/credentials`, which the container will use.
 
 ## Running
 
+Modify the docker-compose.yaml to contain your zone information.
+
 ```bash
 docker compose up --build
 ```
