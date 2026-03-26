@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  dyndns:
+    build: .
+    container_name: unorthodoxdev-dyndns
+    restart: unless-stopped
+
+    environment:
+      DDNS_DOMAIN: home.unorthodoxdev.net
+      DDNS_ZONE_NAME: unorthodoxdev.net
+      DDNS_TTL: "300"
+      AWS_DEFAULT_REGION: us-east-1
+      AWS_SDK_LOAD_CONFIG: "1"
+
+    volumes:
+      - ${HOME}/.aws:/home/appuser/.aws:ro
